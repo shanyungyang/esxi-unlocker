@@ -1,0 +1,10 @@
+backup/
+tools/
+.idea/
+samples/
+tests/
+build/
+dist/
+*.spec
+*.pyc
+*.tgz
