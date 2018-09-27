@@ -26,13 +26,43 @@ maintain on ESXi.
 
 2. Installation
 ---------------
-TO DO
+Copy the distribution file to the ESXi host datastore using scp or some other
+data transfer system.
+
+Decompress the file from the ESXi console or via SSH:
+
+    tar xzvf esxi-unlocker-xxx.tgz
+
+(xxx - will be the version number, for example, 300)
+
+Run the command from the terminal:
+
+    ./esxi-install.sh
+
+Finally reboot the server.
 
 3. Uninstallation
 -----------------
-TO DO
+Open the ESXi console or login via SSH and chnage to the folder where the files were extracted.
 
-4. Thanks
+Run the command from the terminal:
+
+    ./esxi-uninstall.sh
+
+Finally reboot the server.
+
+4. Notes
+--------
+A. There is a command added called esxi-smctest.sh which can show if the patch is successful. It must be run from a
+terminal or SSH session. The output should be:
+
+/bin/vmx
+smcPresent = true
+custom.vgz     false   38725560 B
+
+B. The unlocker can be temporarily disabled during boot by editing the boot options and adding "nounlocker".
+
+5. Thanks
 ---------
 
 Thanks to Zenith432 for originally building the C++ unlocker and Mac Son of Knife
@@ -46,7 +76,7 @@ The code is available at https://github.com/DrDonk/esxi-unlocker
 
 History
 -------
-24/09/18 3.0.0 - First release
+26/09/18 3.0.0 - First release
 
 
 (c) 2011-2018 Dave Parsons

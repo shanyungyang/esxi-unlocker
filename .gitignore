@@ -7,4 +7,7 @@ build/
 dist/
 *.spec
 *.pyc
+*.tar
 *.tgz
+*.vmtar
+*.vgz

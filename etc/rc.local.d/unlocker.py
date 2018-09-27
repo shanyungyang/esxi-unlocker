@@ -41,7 +41,6 @@ Offset  Length  Struct Type Description
 0x18/24 0x30/48 48B    byte Data
 """
 
-from __future__ import print_function
 import codecs
 import os
 import shutil
@@ -377,7 +376,11 @@ def main():
 
 
 if __name__ == '__main__':
-    # Exit if "nounlocker" boot option specified
+    # Check boot options specified
     bootoptions = subprocess.check_output(['/bin/bootOption', '-a'])
-    if not(bootoptions.find('nounlocker')):
+    if bootoptions.find(b'nounlocker') == -1:
+        # Run unlocker code
         main()
+    else:
+        # Exit if "nounlocker" boot option specified
+        print('Unlocker disabled by boot option')
