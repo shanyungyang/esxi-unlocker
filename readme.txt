@@ -1,10 +1,10 @@
-macOS Unlocker V3.0 for VMware ESXi
-===================================
+macOS Unlocker V3.0.1 for VMware ESXi
+=====================================
 
 1. Introduction
 ---------------
 
-Unlocker 3 for ESXi is designed for VMware ESXi 6.5 and 6.7.
+Unlocker 3 for ESXi is designed for VMware ESXi 6.5, 6.7 and 7.0
 
 The patch code carries out the following modifications dependent on the product
 being patched:
@@ -43,7 +43,7 @@ Finally reboot the server.
 
 3. Uninstallation
 -----------------
-Open the ESXi console or login via SSH and chnage to the folder where the files were extracted.
+Open the ESXi console or login via SSH and change to the folder where the files were extracted.
 
 Run the command from the terminal:
 
@@ -58,7 +58,9 @@ terminal or SSH session. The output should be:
 
 /bin/vmx
 smcPresent = true
-custom.vgz     false   38725560 B
+custom.vgz     false   32486592 B
+
+Note: The uncompressed size reported for custom.vgz will vary depending on the ESXi version.
 
 B. The unlocker can be temporarily disabled during boot by editing the boot options and adding "nounlocker".
 
@@ -72,11 +74,9 @@ Thanks also to Sam B for finding the solution for ESXi 6 and helping me with
 debugging expertise. Sam also wrote the code for patching ESXi ELF files and
 modified the unlocker code to run on Python 3 in the ESXi 6.5 environment.
 
-The code is available at https://github.com/DrDonk/esxi-unlocker
-
 History
 -------
 26/09/18 3.0.0 - First release
-
+01/05/20 3.0.1 - Fix for ESXi 7.0
 
 (c) 2011-2018 Dave Parsons
