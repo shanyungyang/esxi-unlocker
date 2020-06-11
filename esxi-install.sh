@@ -2,7 +2,7 @@
 set -e
 #set -x
 
-echo VMware Unlocker 3.0.0
+echo VMware Unlocker 3.0.1
 echo ===============================
 echo Copyright: Dave Parsons 2011-18
 
