@@ -1,4 +1,4 @@
-macOS Unlocker V3.0.1 for VMware ESXi
+macOS Unlocker V3.0.2 for VMware ESXi
 =====================================
 
 1. Introduction
@@ -78,5 +78,6 @@ History
 -------
 26/09/18 3.0.0 - First release
 01/05/20 3.0.1 - Fix for ESXi 7.0
+10/18/20 3.0.1 - Fix for ESXi 7.0 U1 (7.0.1)
 
 (c) 2011-2018 Dave Parsons
