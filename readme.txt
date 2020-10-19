@@ -27,7 +27,8 @@ maintain on ESXi.
 2. Installation
 ---------------
 Copy the distribution file to the ESXi host datastore using scp or some other
-data transfer system.
+data transfer system. If you want to use the source version (i.e. from GIT) see
+"5. Building" fist.
 
 Decompress the file from the ESXi console or via SSH:
 
@@ -64,7 +65,43 @@ Note: The uncompressed size reported for custom.vgz will vary depending on the E
 
 B. The unlocker can be temporarily disabled during boot by editing the boot options and adding "nounlocker".
 
-5. Thanks
+5. Building
+-----------
+If you want to use a version which is not availbale as a distribution (e.g. the code from "master" branch)
+you need to first build the package.
+
+Checkout the repository:
+
+    git clone https://github.com/shanyungyang/esxi-unlocker.git
+
+(if you don't have git installed you can download ZIP archive from GitHub instead)
+
+Enter the directory and build:
+    
+    cd esxi-unlocker
+    ./esxi-build.py
+
+If everything went correctly the ouput should be:
+
+    ESXi-Build for macOS
+
+    Timestamping files...
+
+    Creating unlocker.tgz...
+    etc/
+    etc/rc.local.d/
+    etc/rc.local.d/unlocker.py
+
+    Creating esxi-unlocker-301.tgz...
+    unlocker.tgz
+    esxi-install.sh
+    esxi-uninstall.sh
+    esxi-smctest.sh
+    readme.txt
+
+The package you need to copy in the example above is esxi-unlocker-301.tgz (NOT unlocker.tgz!).
+
+6. Thanks
 ---------
 
 Thanks to Zenith432 for originally building the C++ unlocker and Mac Son of Knife
