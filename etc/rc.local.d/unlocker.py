@@ -342,8 +342,8 @@ def main():
     patchsmc(destvmx, True)
 
     # Patch 32-bit libvmkctl to return Apple SMC present
+    os.makedirs(joinpath(destfolder, 'lib'))
     if os.path.isfile(srclib32):
-        os.makedirs(joinpath(destfolder, 'lib'))
         shutil.copy2(srclib32, destlib32)
         patchvmkctl(destlib32)
 
