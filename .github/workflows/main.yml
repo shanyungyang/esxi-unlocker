@@ -6,13 +6,13 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ skibum55-build-1 ]
+    branches: [ master ]
     tags:
       - 'v*.*.*'
-#   pull_request:
-#     branches: [ master ]
-#     tags:
-#     - 'v*.*.*'
+  pull_request:
+    branches: [ master ]
+    tags:
+    - 'v[0-9].[0-9]+.[0-9]+'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -56,9 +56,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./readme.txt
-          asset_name: readme.txt
-          asset_content_type: text/plain 
+          asset_path: ./readme.md
+          asset_name: readme.md
+          asset_content_type: text/markdown 
       - name: Upload Release Asset2
         id: upload-release-asset2
         uses: actions/upload-release-asset@v1
