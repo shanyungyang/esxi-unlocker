@@ -26,7 +26,7 @@ maintain on ESXi.
 
 2. Installation
 ---------------
-Copy the distribution file to the ESXi host datastore using scp or some other
+Copy the latest release file to the ESXi host datastore using scp or some other
 data transfer system. If you want to use the source version (i.e. from GIT) see
 "5. Building" fist.
 
@@ -67,8 +67,10 @@ B. The unlocker can be temporarily disabled during boot by editing the boot opti
 
 5. Building
 -----------
-If you want to use a version which is not availbale as a distribution (e.g. the code from "master" branch)
-you need to first build the package.
+If you want to use a version which is not available as a distribution (e.g. the code from "master" branch)
+you need to first build the package.  You can build locally on a Mac or via a github workflow.
+
+### Local Build
 
 Checkout the repository:
 
@@ -101,6 +103,20 @@ If everything went correctly the ouput should be:
 
 The package you need to copy in the example above is esxi-unlocker-301.tgz (NOT unlocker.tgz!).
 
+###  Github Build
+
+#### Triggered
+
+If you add a tag to any commit in the format `v*.*.*` a triggered build will run and create a release.
+
+#### Manual
+
+Fork the repository, click on actions, select manual CI and then run.  
+
+This will build a new draft release for you which you can upload to your esxi using curl or wget.
+
+If you add a tag in the format v*.*.* a triggered build will run without needing 
+
 6. Thanks
 ---------
 
@@ -115,6 +131,7 @@ History
 -------
 26/09/18 3.0.0 - First release
 01/05/20 3.0.1 - Fix for ESXi 7.0
-10/18/20 3.0.1 - Fix for ESXi 7.0 U1 (7.0.1)
+10/18/20 3.0.2 - Fix for ESXi 7.0 U1 (7.0.1)
+10/29/20 3.0.3 - Release process automated
 
 (c) 2011-2018 Dave Parsons
