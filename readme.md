@@ -31,7 +31,7 @@ Decompress the file from the ESXi console or via SSH:
 
     tar xzvf esxi-unlocker-xxx.tgz
 
-(xxx - will be the version number, for example, 300)
+(xxx - will be the version number, for example, 3.0.0)
 
 Run the command from the terminal:
 
@@ -104,7 +104,7 @@ The package you need to copy in the example above is esxi-unlocker-301.tgz (NOT 
 
 #### Triggered
 
-If you add a tag to any commit in the format `v*.*.*` a triggered build will run and create a release.
+If you add a tag to any commit in the semver format `*.*.*` a triggered build will run and create a release.
 
 #### Manual
 
@@ -112,7 +112,7 @@ Fork the repository, click on actions, select manual CI and then run.
 
 This will build a new draft release for you which you can upload to your esxi using curl or wget.
 
-If you add a tag in the format `v*.*.*` a triggered build will run without needing 
+If you add a tag in the format `*.*.*` a triggered build will run without needing 
 
 ## 6. Thanks
 
