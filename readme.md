@@ -1,8 +1,8 @@
 # macOS Unlocker V3.0.2 for VMware ESXi
----
+
 
 ## 1. Introduction
----
+
 
 Unlocker 3 for ESXi is designed for VMware ESXi 6.5, 6.7 and 7.0
 
@@ -22,7 +22,7 @@ maintain on ESXi.
 > version. Failure to do this could render VMware unusable.                 
 
 ## 2. Installation
----
+
 Copy the latest release file to the ESXi host datastore using scp or some other
 data transfer system. If you want to use the source version (i.e. from GIT) see
 "5. Building" fist.
@@ -40,7 +40,7 @@ Run the command from the terminal:
 Finally reboot the server.
 
 ## 3. Uninstallation
----
+
 Open the ESXi console or login via SSH and change to the folder where the files were extracted.
 
 Run the command from the terminal:
@@ -50,7 +50,7 @@ Run the command from the terminal:
 Finally reboot the server.
 
 ## 4. Notes
----
+
 A. There is a command added called esxi-smctest.sh which can show if the patch is successful. It must be run from a
 terminal or SSH session. The output should be:
 
@@ -63,7 +63,7 @@ Note: The uncompressed size reported for custom.vgz will vary depending on the E
 B. The unlocker can be temporarily disabled during boot by editing the boot options and adding "nounlocker".
 
 ## 5. Building
----
+
 If you want to use a version which is not available as a distribution (e.g. the code from "master" branch)
 you need to first build the package.  You can build locally on a Mac or via a github workflow.
 
@@ -115,7 +115,6 @@ This will build a new draft release for you which you can upload to your esxi us
 If you add a tag in the format `v*.*.*` a triggered build will run without needing 
 
 ## 6. Thanks
----
 
 Thanks to Zenith432 for originally building the C++ unlocker and Mac Son of Knife
 (MSoK) for all the testing and support.
@@ -125,7 +124,6 @@ debugging expertise. Sam also wrote the code for patching ESXi ELF files and
 modified the unlocker code to run on Python 3 in the ESXi 6.5 environment.
 
 # History
----
 
 26/09/18 3.0.0 - First release
 
