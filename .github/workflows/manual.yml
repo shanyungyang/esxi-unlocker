@@ -54,8 +54,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./readme.txt
-          asset_name: readme.txt
+          asset_path: ./readme.md
+          asset_name: readme.md
           asset_content_type: text/plain 
       - name: Upload Release Asset2
         id: upload-release-asset2
