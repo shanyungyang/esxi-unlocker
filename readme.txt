@@ -1,4 +1,4 @@
-macOS Unlocker V3.0.2 for VMware ESXi
+macOS Unlocker V3.0.3 for VMware ESXi
 =====================================
 
 1. Introduction
@@ -77,7 +77,7 @@ Checkout the repository:
 (if you don't have git installed you can download ZIP archive from GitHub instead)
 
 Enter the directory and build:
-    
+
     cd esxi-unlocker
     ./esxi-build.py
 
@@ -92,14 +92,14 @@ If everything went correctly the ouput should be:
     etc/rc.local.d/
     etc/rc.local.d/unlocker.py
 
-    Creating esxi-unlocker-301.tgz...
+    Creating esxi-unlocker-300.tgz...
     unlocker.tgz
     esxi-install.sh
     esxi-uninstall.sh
     esxi-smctest.sh
     readme.txt
 
-The package you need to copy in the example above is esxi-unlocker-301.tgz (NOT unlocker.tgz!).
+The package you need to copy in the example above is esxi-unlocker-300.tgz (NOT unlocker.tgz!).
 
 6. Thanks
 ---------
@@ -113,8 +113,10 @@ modified the unlocker code to run on Python 3 in the ESXi 6.5 environment.
 
 History
 -------
-26/09/18 3.0.0 - First release
-01/05/20 3.0.1 - Fix for ESXi 7.0
-10/18/20 3.0.2 - Fix for ESXi 7.0 U1 (7.0.1)
+26/09/2018 3.0.0 - First release
+01/05/2020 3.0.1 - Fix for ESXi 7.0
+10/18/2020 3.0.2 - Fix for ESXi 7.0 U1 (7.0.1)
+10/17/2020 3.0.3 - Fix for ESXi 7.0 U3 (7.0.3)
 
 (c) 2011-2018 Dave Parsons
+Powered by sysin.org

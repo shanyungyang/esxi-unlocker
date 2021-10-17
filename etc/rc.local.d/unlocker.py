@@ -39,6 +39,8 @@ Offset  Length  Struct Type Description
 0x0A/10 0x06/06 6x     byte Padding
 0x10/16 0x08/08 Q      ptr  Internal VMware routine
 0x18/24 0x30/48 48B    byte Data
+
+updated 2021.10.17 gc@sysin.org
 """
 
 import codecs
@@ -342,8 +344,8 @@ def main():
     patchsmc(destvmx, True)
 
     # Patch 32-bit libvmkctl to return Apple SMC present
-    os.makedirs(joinpath(destfolder, 'lib'))
     if os.path.isfile(srclib32):
+        os.makedirs(joinpath(destfolder, 'lib'))
         shutil.copy2(srclib32, destlib32)
         patchvmkctl(destlib32)
 
@@ -355,7 +357,10 @@ def main():
 
     # Build the gzipped tar file custom.tgz
     print('\nCreating custom.tgz...')
-    subprocess.call('/bin/tar czvf custom.tgz bin lib lib64', shell=True)
+    if os.path.isfile(srclib32):
+        subprocess.call('/bin/tar czvf custom.tgz bin lib lib64', shell=True)
+    else:
+        subprocess.call('/bin/tar czvf custom.tgz bin lib64', shell=True)
 
     # Build the vmtar file custom.vmtar
     print('\nCreating custom.vmtar...')

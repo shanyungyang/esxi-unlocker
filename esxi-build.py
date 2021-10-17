@@ -33,9 +33,9 @@ if sys.version_info < (2, 7):
     sys.exit(1)
 
 # TODO: Change for a new release
-VERSION = '3.0.2'
-FILEVER = '302'
-FILENAME = 'esxi-unlocker-302.tgz'
+VERSION = '3.0.3'
+FILEVER = '303'
+FILENAME = 'esxi-unlocker-303.tgz'
 
 TIMESTAMP = '{:%Y%m%d%H%M.%S}'.format(datetime.datetime.now())
 TOUCH = 'touch -t ' + TIMESTAMP
