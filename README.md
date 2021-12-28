@@ -13,9 +13,9 @@ being patched:
 The code is written in Python as it makes the Unlocker easier to run and
 maintain on ESXi.
 
-#### IMPORTANT:
-
-**Always uninstall the previous version of the Unlocker before using a new version. Failure to do this could render VMware unusable.** 
+> #### ***IMPORTANT:***
+>
+> **Always uninstall the previous version of the Unlocker before using a new version. Failure to do this could render VMware unusable.** 
 
 ## 2. Installation
 
@@ -51,7 +51,7 @@ terminal or SSH session. The output should be:
 ```
 /bin/vmx
 smcPresent = true
-custom.vgz   false   32486592 B
+custom.vgz false 32486592 B
 ```
 
 Note: The uncompressed size reported for custom.vgz will vary depending on the ESXi version.
@@ -92,6 +92,20 @@ If everything went correctly the output should be:
     readme.txt
 
 The package you need to copy in the example above is esxi-unlocker-300.tgz (NOT unlocker.tgz!).
+
+#### GitHub Build
+
+##### Triggered
+
+If you add a tag to any commit in the semver format `*.*.*` a triggered build will run and create a release.
+
+##### Manual
+
+Fork the repository, click on actions, select manual CI and then run.
+
+This will build a new draft release for you which you can upload to your esxi using curl or wget.
+
+If you add a tag in the format `*.*.*` a triggered build will run without needing.
 
 ## 6. Thanks
 
