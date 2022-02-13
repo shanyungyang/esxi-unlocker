@@ -113,12 +113,14 @@ Thanks to Zenith432 for originally building the C++ unlocker and Mac Son of Knif
 
 Thanks also to Sam B for finding the solution for ESXi 6 and helping me with debugging expertise. Sam also wrote the code for patching ESXi ELF files and modified the unlocker code to run on Python 3 in the ESXi 6.5 environment.
 
-#### History:
+### History:
 
-26/09/2018 3.0.0 - First release
-01/05/2020 3.0.1 - Fix for ESXi 7.0
-10/18/2020 3.0.2 - Fix for ESXi 7.0 U1 (7.0.1)
-10/17/2020 3.0.3 - Fix for ESXi 7.0 U3 (7.0.3)
+26/09/18 3.0.0 - First release
+
+01/05/20 3.0.1 - Fix for ESXi 7.0
+
+10/18/20 3.0.2 - Fix for ESXi 7.0 U1 (7.0.1)
+
+10/29/20 3.0.3 - Release process automated
 
 (c) 2011-2018 Dave Parsons
-Powered by sysin.org
