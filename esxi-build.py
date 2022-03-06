@@ -39,16 +39,16 @@ FILENAME = 'esxi-unlocker-302.tgz'
 
 TIMESTAMP = '{:%Y%m%d%H%M.%S}'.format(datetime.datetime.now())
 TOUCH = 'touch -t ' + TIMESTAMP
-GTARUNLOCKER = '/usr/local/bin/gtar czvf unlocker.tgz etc'
-GTARDISTRIB = '/usr/local/bin/gtar czvf ' + FILENAME + \
-              ' unlocker.tgz esxi-install.sh esxi-uninstall.sh esxi-smctest.sh readme.txt'
+TARUNLOCKER = '/usr/bin/tar czvf unlocker.tgz etc'
+TARDISTRIB = '/usr/bin/tar czvf ' + FILENAME + \
+              ' unlocker.tgz esxi-install.sh esxi-uninstall.sh esxi-smctest.sh readme.md'
 
 
 def main():
 
     # Timestamp files for release
     print('\nTimestamping files...')
-    subprocess.call(TOUCH + ' readme.txt', shell=True)
+    subprocess.call(TOUCH + ' readme.md', shell=True)
     subprocess.call(TOUCH + ' esxi-install.sh', shell=True)
     subprocess.call(TOUCH + ' esxi-uninstall.sh', shell=True)
     subprocess.call(TOUCH + ' esxi-smctest.sh', shell=True)
@@ -58,18 +58,15 @@ def main():
 
     # Build the gzipped tar file unlocker.tgz
     print('\nCreating unlocker.tgz...')
-    subprocess.call(GTARUNLOCKER, shell=True)
+    subprocess.call(TARUNLOCKER, shell=True)
     subprocess.call(TOUCH + ' unlocker.tgz', shell=True)
 
     # Build the distribution file esxi-unlocker-VER.tgz
     print('\nCreating ' + FILENAME + '...')
-    subprocess.call(GTARDISTRIB, shell=True)
+    subprocess.call(TARDISTRIB, shell=True)
     subprocess.call(TOUCH + ' ' + FILENAME, shell=True)
 
 
 if __name__ == '__main__':
-    if sys.platform == 'darwin':
-        print('ESXi-Build for macOS')
         main()
-    else:
-        print('ESXi-Build only supported on macOS')
+
