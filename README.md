@@ -1,5 +1,7 @@
 # MacOS Unlocker for VMware ESXi
 
+## *注：中文版 Chinese Version 见 CSDN（打不过就加入行为）https://blog.csdn.net/RGBBB/article/details/122197136*
+
 ## 1. Introduction
 
 Unlocker  for ESXi is designed for VMware ESXi 6.5, 6.7 and 7.0 3U
