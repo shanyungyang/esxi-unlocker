@@ -21,7 +21,7 @@ maintain on ESXi.
 
 ## 2. Installation
 
-Copy the distribution file to the ESXi host datastore using scp or some other data transfer system. If you want to use the source version (i.e. from GIT) see "5. Building" fist.
+Copy the distribution file to the ESXi host datastore using scp or some other data transfer system. If you want to use the source version (i.e. from GIT) see "5. Building" first.
 
 Decompress the file from the ESXi console or via SSH:
 
