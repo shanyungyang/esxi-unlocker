@@ -39,8 +39,8 @@ FILENAME = 'esxi-unlocker-302.tgz'
 
 TIMESTAMP = '{:%Y%m%d%H%M.%S}'.format(datetime.datetime.now())
 TOUCH = 'touch -t ' + TIMESTAMP
-GTARUNLOCKER = '/usr/local/bin/gtar czvf unlocker.tgz etc'
-GTARDISTRIB = '/usr/local/bin/gtar czvf ' + FILENAME + \
+GTARUNLOCKER = 'gtar czvf unlocker.tgz etc'
+GTARDISTRIB = 'gtar czvf ' + FILENAME + \
               ' unlocker.tgz esxi-install.sh esxi-uninstall.sh esxi-smctest.sh readme.txt'
 
 
